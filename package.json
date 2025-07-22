@@ -3,13 +3,18 @@
   "license": "MIT",
   "scripts": {
     "test": "pnpm cypress run",
-    "build": "github-markdown portfolio.md --verbose > docs/portfolio.html",
-    "dev": "pnpx nodemon --ext md  --exec \"pnpm run build\""
+    "build1": "github-markdown portfolio.md --verbose > docs/portfolio.html",
+    "build": "pnpx gulp build && pnpx gulp prettifyHTML",
+    "dev": "pnpx nodemon --ext js,md  --exec \"pnpm run build\""
   },
   "dependencies": {
+    "gulp-html-prettify": "^0.0.1",
+    "gulp-minify": "^3.1.0",
     "markdown-to-html": "^0.0.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^5.0.1"
+  },
   "engines": {
     "node": ">=18"
   },
