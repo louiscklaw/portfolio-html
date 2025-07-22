@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "pnpm cypress run",
+    "build": "github-markdown portfolio.md --verbose > docs/portfolio.html",
+    "dev": "pnpx nodemon --ext md  --exec \"pnpm run build\""
+  },
+  "dependencies": {
+    "markdown-to-html": "^0.0.13"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@vercel/speed-insights",
+      "cypress",
+      "es5-ext",
+      "puppeteer",
+      "sharp"
+    ]
+  },
+  "packageManager": "pnpm@10.13.1"
+}
