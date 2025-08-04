@@ -5,6 +5,7 @@
     "test": "pnpm cypress run",
     "build1": "github-markdown portfolio.md --verbose > docs/portfolio.html",
     "build": "pnpx gulp build && pnpx gulp prettifyHTML",
+    "build:w": "pnpx nodemon --ext md --exec \"pnpm run build\"",
     "dev": "pnpx nodemon --ext js,md  --exec \"pnpm run build\""
   },
   "dependencies": {
