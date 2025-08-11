@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" /><!-- Title -->
+  <title>Majors</title>
+  <!-- /Title -->
+  <!-- Meta -->
+  <meta charset="utf-8" />
+  <meta name="author" content="City University of Hong Kong" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes" />
+  <!-- /Meta -->
+
+  <!-- Meta -->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <!-- /Meta -->
+
+  <!-- Icon -->
+  <link rel="shortcut icon" href="https://www.cityu.edu.hk/favicon.ico" />
+  <!-- /Icon -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="https://template.cityu.edu.hk/template/css/cityu.base.css" />
+  <link rel="stylesheet" type="text/css" href="https://template.cityu.edu.hk/template/css/jquery.ddsmoothmenu.css" />
+  <!-- /CSS -->
+
+  <STYLE>
+    /* City University of Hong Kong */
+    /* Print setting */
+    @media print {
+      .noPrint {
+        display: none
+      }
+
+      #cityu-content {
+        font-size: 100%;
+      }
+
+      .cityu-inner {
+        width: 95%;
+      }
+    }
+
+    /* Layout */
+    .ui-tabs-vertical {
+      width: 55em;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav {
+      padding: .2em .1em .2em .2em;
+      float: left;
+      width: 12em;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li {
+      clear: left;
+      width: 100%;
+      border-bottom-width: 1px !important;
+      border-right-width: 0 !important;
+      margin: 0 -1px .2em 0;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li a {
+      display: block;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active {
+      padding-bottom: 0;
+      padding-right: .1em;
+      border-right-width: 1px;
+      border-right-width: 1px;
+    }
+
+    .ui-tabs-vertical .ui-tabs-panel {
+      padding: 1em;
+      float: right;
+      width: 40em;
+    }
+
+    body.cityu-dept #cityu-header-global {
+      padding-bottom: 8px;
+    }
+
+    #cityu-header+#cityu-main #cityu-content .cityu-content-page {
+      padding-top: 40px;
+    }
+
+    #cityu-footer-column {
+      padding-top: 28px;
+      padding-bottom: 29px;
+    }
+
+    #cityu-footer-notes {
+      margin-top: 5px;
+    }
+
+    /* Contents */
+    .title {
+      font-size: 200%;
+    }
+
+    .subTitle {
+      font-size: 175%;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .formTitle {
+      font-size: 185%;
+      font-weight: normal !important;
+      color: #aa1454;
+    }
+
+    .formSubTitle {
+      font-size: 135%;
+      font-weight: normal !important;
+      color: #aa1454;
+    }
+
+    .formText {
+      font-size: 100%;
+      font-weight: bold;
+    }
+
+    .formValue {
+      font-size: 100%;
+    }
+
+    .dotRow {
+      border-style: dotted;
+      border-right-style: none;
+      border-left-style: none
+    }
+
+    .dotRowBgColor1 {
+      background-color: #e5dfec;
+    }
+
+    .dotRowBgColor2 {
+      background-color: #dbe5f1
+    }
+
+    .dotRowLineColor1 {
+      border-color: #8064a2;
+    }
+
+    .dotRowLineColor2 {
+      border-color: #4f81bd;
+    }
+
+    #cityu-content table[border="0"],
+    #cityu-content table[border="0"]>tbody>tr>th,
+    #cityu-content table[border="0"]>tbody>tr>td,
+    #cityu-content .course-border-none,
+    #cityu-content .course-border-none>tbody>tr>th,
+    #cityu-content .course-border-none>tbody>tr>td {
+      border: 0;
+    }
+
+    #cityu-content table[border="1"],
+    #cityu-content table[border="1"]>tbody>tr>th,
+    #cityu-content table[border="1"]>tbody>tr>td,
+    #cityu-content .course-border-default,
+    #cityu-content .course-border-default>tbody>tr>th,
+    #cityu-content .course-border-default>tbody>tr>td {
+      border: 1px solid #444;
+    }
+
+    #cityu-content table th {
+      border-bottom: 1px solid #fff;
+      border-right: 1px solid #fff;
+      background-color: #e5dfec;
+      text-align: left;
+    }
+
+    .displayNone {
+      display: none;
+    }
+
+    .padNone {
+      padding-left: 0px;
+    }
+
+    .padTitle {
+      padding-left: 5px;
+    }
+
+    .padContent {
+      padding-left: 5px;
+    }
+
+    .padLeft {
+      display: block;
+      margin: 0px;
+    }
+
+    .padRight {
+      display: block;
+      float: right;
+      width: 50%;
+      margin-left: 4px;
+      margin-right: 4px;
+      text-align: right;
+    }
+
+    .padRight2 {
+      display: block;
+      float: right;
+      width: 50%;
+      margin-left: 4px;
+      margin-right: 4px;
+      text-align: right;
+    }
+
+    .colorTitle {
+      color: #aa1454;
+    }
+  </STYLE>
+
+  <script>
+    var cityuMobileWeb = true; // Enable mobile web {true|false}
+    var cityuMobileTest = false; // Enable mobile web testing in desktop {true|false}
+    var cityuMobileCSSPath = 'css/course.mobile.css'; // File path if you have a customized CSS for mobile web (e.g. 'css/cityu.mobile.custom.css')
+
+    /* City University of Hong Kong */
+
+    /* =========================================== */
+    /* Main */
+    /* =========================================== */
+  </script>
+
+  <!-- JS -->
+  <script type="text/javascript" src="https://template.cityu.edu.hk/template/js/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="https://template.cityu.edu.hk/template/js/cityu.base.js"></script>
+  <!-- /JS -->
+
+</head>
+
+<body class="cityu-dept cityu-layout-content">
+  <!-- Header -->
+  <div id="cityu-header" class="cityu-outer cityu-bg-clear">
+    <div class="cityu-inner">
+      <!-- Global -->
+      <div id="cityu-header-global">
+
+        <!-- CityU Logo -->
+        <div id="cityu-header-cityulogo"><a href="http://www.cityu.edu.hk/"><img
+              src="https://template.cityu.edu.hk/template/img/logos/cityu_deptpage.png"
+              alt="City University of Hong Kong" /></a></div><!-- /CityU Logo -->
+
+        <!-- Skip Links -->
+        <div class="cityu-skiplink">
+          <a href="#cityu-nav">Skip to navigation</a>
+        </div>
+        <div class="cityu-skiplink">
+          <a href="#cityu-content">Skip to content</a>
+        </div>
+        <!-- /Skip Links -->
+
+        <!-- Toolbar -->
+        <div id="cityu-header-toolbar">
+
+          <!-- Search -->
+          <div id="cityu-header-search">
+            <form method="get" action="https://www6.cityu.edu.hk/cityusearch">
+              <fieldset>
+                <legend class="cityu-hidden">
+                  Search
+                </legend>
+                <div class="cityu-search-text-wrapper">
+                  <label class="cityu-hidden" for="cityu-search-text">Search Keywords</label>
+                  <input id="cityu-search-text" type="text" name="q" placeholder="Search" />
+                  <label class="cityu-hidden" for="cityu-search-button">Submit Search</label>
+                  <input id="cityu-search-button" class="cityu-search-button" type="submit" value="" />
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <!-- /Search -->
+
+        </div>
+        <!-- /Toolbar -->
+
+      </div>
+      <!-- /Global -->
+
+    </div>
+  </div>
+  <!-- /Header -->
+
+  <!-- Main Nav -->
+  <div id="cityu-nav" class="cityu-outer">
+    <div class="cityu-inner">
+      <!-- Nav - Dynamic Drive - Smooth Navigational Menu -->
+      <div id="cityu-nav-list" class="ddsmoothmenu" style="display:table-cell; vertical-align:middle"><span
+          style="font-size:20px; color:white;"><b>MAJORS &gt;&gt;&gt; </b></span> </div>
+      <!-- /Nav - Dynamic Drive - Smooth Navigational Menu -->
+    </div>
+  </div>
+  <!-- Main Nav -->
+
+  <!-- Main Page -->
+  <div id="cityu-main" class="cityu-outer">
+    <div class="cityu-inner"> <!-- Page Nav -->
+      <div id="cityu-sidebar-1">
+        <div id="cityu-sub-nav-list">
+          <div class="cityu-box-item">
+            <ul>
+              <li><a id="prog-main" href="BENG1_ELEL-0.htm">Overview</a></li>
+              <li style="height: 22px; padding-top: 6px;"><b
+                  style="padding-left: 10px; padding-top: 6px; padding-right: 6px;">Curriculum&#187;</b>
+              <li>
+              <li><a href="#Heading" class="active">Normative 4-year Degree</a>
+                <ul>
+                  <li><a href="#GeReq">GE Requirements</a></li>
+                  <li><a href="#ColReq">College / School Requirements</a></li>
+                  <li><a href="#MajorReq">Major Requirements</a></li>
+                  <li><a href="#SSP">Suggested Study Plan</a></li>
+                </ul>
+              </li>
+              <li><a id="prog-as1" href="BENG1_ELEL-2.htm">Advanced Standing I</a></li>
+              <li><a id="prog-as2" href="BENG1_ELEL-3.htm">Advanced Standing II</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /Page Nav -->
+      <!-- Content -->
+      <div id="cityu-content">
+        <div class="cityu-content-page">
+          <table width="100%" border="0" cellpadding="2" style="padding-top: 10px" class="padContent">
+            <tr id="gp_header" class="display">
+              <td colspan="2" class="padNone" style="padding-left:0px;"><a id="Heading"></a><Strong>
+                  <div id="div_prog_title_header" class="formTitle padTitle">Electronic and Electrical Engineering</div>
+                </strong></td>
+            </tr>
+            <tr>
+              <td class="padContent">
+                <table width="90%" border="1" cellpadding="2"
+                  style="padding-top: 10px; border-style:dotted; border-right-style: none; border-left-style: none;">
+                  <tr class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2" width="40%">
+                    <td align="right"
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;font-size:14"
+                      class="dotRowBgColor2"><strong>
+                        <div class="formText">Normative 4-year Degree</div>
+                      </strong></td>
+                  </tr>
+                  <tr id="gp_prog_title" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2" width="40%"><strong>
+                        <div class="formText">Major</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_prog_title" class="formValue">Electronic and Electrical Engineering<br>電子及電機工程學</div>
+                    </td>
+                  </tr>
+                  <tr id="gp_award_title" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2" width="30%"><strong>
+                        <div class="formText">Degree / Award Title</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_award_title" class="formValue">Bachelor of Engineering in Electronic and Electrical
+                        Engineering<br>工學士(電子及電機工程學)</div>
+                    </td>
+                  </tr>
+                  <tr id="gp_offering_dept" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2"><strong>
+                        <div class="formText">Offering Academic Unit</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_offering_dept" class="formValue">Department of Electrical Engineering</div>
+                    </td>
+                  </tr>
+                  <tr id="gp_npos" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2"><strong>
+                        <div class="formText">Normal Period of Study</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_normal_period_of_study" class="formValue">4 years</div>
+                    </td>
+                  </tr>
+                  <tr id="gp_mpos" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2"><strong>
+                        <div class="formText">Maximum Period of Study</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_max_period_of_study" class="formValue">8 years</div>
+                    </td>
+                  </tr>
+                  <tr id="gp_cu" class="display">
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;"
+                      class="dotRowBgColor2"><strong>
+                        <div class="formText">Credit Units Required for Graduation</div>
+                      </strong></td>
+                    <td
+                      style="border-style: dotted; border-right-style: none; border-left-style: none; border-color:#4f81bd;">
+                      <div id="div_credit_units_req" class="formValue">120 credit units</div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div id="disclaimer"><i>Note: The following curriculum information is subject to periodic review and
+                    changes.</i></div>
+              </td>
+            </tr>
+            <tr id="gp_ge_req_header" class="display">
+              <td colspan="2"><br><a id="GeReq"></a><strong>
+                  <div class="formText padTitle colorTitle" id="div_ge_cu">
+                    <p class="padLeft">GE Requirements (30 credit units)<span id="div_ge_cat_term"
+                        class="padRight">Catalogue Term : Semester A 2021/22</span></p>
+                  </div>
+                </strong>
+                <hr style="height:0px; padding:0px; margin:0px;color:#aa1454;border-top-color:#aa1454">
+              </td>
+            </tr>
+            <tr id="gp_ge_req_content" class="display">
+              <td colspan="2" class="padNone" style="padding-left:0px;">
+                <div id="div_ge_req" class="formValue padContent">
+                  <table border="0" id="reqsX" style="border-collapse:collapse" width="90%">
+                    <tbody class="tbodyX ui-sortable" id="reqstbodyX" style="">
+                      <tr class="linkRow">
+                        <td><br>
+                          <table width="95%" style="padding: 0px; margin-left: 0pt; border-collapse: collapse;"
+                            border="1">
+                            <tbody>
+                              <tr>
+                                <td style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  bgcolor="#e5dfec" colspan="3"> </td>
+                                <td width="12%" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  bgcolor="#e5dfec"><strong>Credit Units</strong></td>
+                              </tr>
+                              <tr>
+                                <td width="25%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;" rowspan="3">
+                                  <strong>University Requirements</strong>
+                                </td>
+                                <td width="63%" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  colspan="2"><a href="../course/GE1401.htm" target="_new">GE1401</a> University English
+                                </td>
+                                <td width="12%" style="padding: 3px; border: 1px solid #000000; border-image: none;">3
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="63%" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  colspan="2"><a href="../course/GE2410.htm" target="_new">GE2410</a> English for
+                                  Engineering</td>
+                                <td width="12%" style="padding: 3px; border: 1px solid #000000; border-image: none;">3
+                                </td>
+                              </tr>
+                              <tr>
+                                <td width="63%" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  colspan="2"><a href="../course/GE1501.htm" target="_new">GE1501</a> Chinese
+                                  Civilisation - History and Philosophy</td>
+                                <td width="12%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;">3</td>
+                              </tr>
+                              <tr>
+                                <td width="25%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;">
+                                  <strong>Distributional Requirements</strong>
+                                </td>
+                                <td width="63%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;" colspan="2">Take
+                                  at least 1 course from each of the three distributional areas:<br><br>Area 1: Arts and
+                                  Humanities<br>Area 2: Study of Societies, Social and Business Organisations<br>Area 3:
+                                  Science and Technology<br><br>Visit the <a
+                                    href="http://www6.cityu.edu.hk/ge_info/Search/" target="_new">GE website</a> for
+                                  more course information.</td>
+                                <td width="12%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;">12</td>
+                              </tr>
+                              <tr>
+                                <td width="25%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;" rowspan="3">
+                                  <strong>College-specified Courses ^</strong>
+                                </td>
+                                <td width="63%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;" colspan="2"><a
+                                    href="../course/MA1200.htm" target="_new">MA1200</a> Calculus and Basic Linear
+                                  Algebra I<br><em>Or</em><br><a href="../course/MA1300.htm" target="_new">MA1300</a>
+                                  Enhanced Calculus and Linear Algebra I</td>
+                                <td width="12%" valign="top"
+                                  style="padding: 3px; border: 1px solid #000000; border-image: none;">3</td>
+                              </tr>
+                              <tr>
+                                <td valign="top" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  colspan="2"><a href="../course/MA1201.htm" target="_new">MA1201</a> Calculus and Basic
+                                  Linear Algebra II<br><em>Or</em><br><a href="../course/MA1301.htm"
+                                    target="_new">MA1301</a> Enhanced Calculus and Linear Algebra II</td>
+                                <td valign="top" style="padding: 3px; border: 1px solid #000000; border-image: none;">3
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top" style="padding: 3px; border: 1px solid #000000; border-image: none;"
+                                  colspan="2"><a href="../course/EE2066.htm" target="_new">EE2066</a> Engineers in
+                                  Society
+                                  <br><br><em>Students successfully completed EE4082/ EE4083/ EE4084 are not required to
+                                    take this course.</em>
+                                </td>
+                                <td valign="top" style="padding: 3px; border: 1px solid #000000; border-image: none;">3
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td><br>
+                          <p align="justify">^ Students are highly encouraged to take MA1200 and MA1201 in which the
+                            engineering mathematical contents already fit the needs of the following studies in their
+                            majors.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr id="gp_col_req_header" class="display">
+              <td colspan="2"><br><a id="ColReq"></a><strong>
+                  <div class="formText padTitle colorTitle" id="div_col_cu">
+                    <p class="padLeft">College / School Requirements (6 credit units)<span id="div_col_cat_term"
+                        class="padRight">Catalogue Term : Semester A 2021/22</span></p>
+                  </div>
+                </strong>
+                <hr style="height:0px; padding:0px; margin:0px;color:#aa1454;border-top-color:#aa1454">
+              </td>
+            </tr>
+            <tr id="gp_col_req_content" class="display">
+              <td colspan="2" class="padNone" style="padding-left:0px;">
+                <div id="div_col_req" class="formValue padContent">
+                  <table border="0" id="reqsX" style="border-collapse:collapse" width="90%">
+                    <tbody class="tbodyX ui-sortable" id="reqstbodyX" style="">
+                      <tr class="linkRow">
+                        <td>
+                          <table name="xcrses[]" width="95%" border="1" style="border-collapse:collapse">
+                            <tbody id="crsestbody" class="a">
+                              <tr>
+                                <th width="20%">Course Code</th>
+                                <th width="68%">Course Title</th>
+                                <th width="12%">Credit Units</th>
+                              </tr>
+                              <tr>
+                                <td width="20%" style="vertical-align:middle;"><a href="../course/CS1302.htm"
+                                    target="_blank"><span class="formValue">CS1302</span></a></td>
+                                <td width="60%" style="vertical-align:middle;">Introduction to Computer Programming</td>
+                                <td width="20%" style="vertical-align:middle;">3</td>
+                              </tr>
+                              <tr>
+                                <td width="20%" style="vertical-align:middle;"><a href="../course/PHY1202.htm"
+                                    target="_blank"><span class="formValue">PHY1202</span></a></td>
+                                <td width="60%" style="vertical-align:middle;">General Physics II</td>
+                                <td width="20%" style="vertical-align:middle;">3</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr id="gp_major_req_header" class="display">
+              <td colspan="2"><br><a id="MajorReq"></a><strong>
+                  <div class="formText padTitle colorTitle" id="div_major_cu">Major Requirements (84 credit units)<span
+                      id="div_major_cat_term" class="padRight">Catalogue Term : Semester A 2022/23</span></p>
+                  </div>
+                </strong>
+                <hr style="height:0px; padding:0px; margin:0px;color:#aa1454;border-top-color:#aa1454">
+              </td>
+            </tr>
+            <tr id="gp_major_req_content" class="display">
+              <td colspan="2" class="padNone" style="padding-left:0px;">
+                <div id="div_major_req" class="formValue padContent">
+                  <table border="0" id="reqsX" style="border-collapse:collapse" width="90%">
+                    <tbody class="tbodyX ui-sortable" id="reqstbodyX" style="">
+                      <tr class="linkRow">
+                        <td><br>
+                          <p><strong>1. Core Courses (69 credit units)</strong></p>
+                        </td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td>
+                          <table name="xcrses[]" width="95%" border="1" style="border-collapse:collapse">
+                            <tbody id="crsestbody" class="a">
+                              <tr>
+                                <th width="10%">Course Code</th>
+                                <th width="40%">Course Title</th>
+                                <th width="10%">Credit Units</th>
+                                <th width="40%">Remarks</th>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/CS2311.htm"
+                                    target="_blank"><span class="formValue">CS2311</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Computer Programming</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE1000.htm"
+                                    target="_blank"><span class="formValue">EE1000</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Programme Induction</td>
+                                <td width="10%" style="vertical-align:middle;">0</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE1001.htm"
+                                    target="_blank"><span class="formValue">EE1001</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Foundations of Digital Techniques</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE1002.htm"
+                                    target="_blank"><span class="formValue">EE1002</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Principles of Electrical Engineering</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE1004.htm"
+                                    target="_blank"><span class="formValue">EE1004</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Foundations of Information Systems and
+                                  Data Analysis</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2000.htm"
+                                    target="_blank"><span class="formValue">EE2000</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Logic Circuit Design</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2004.htm"
+                                    target="_blank"><span class="formValue">EE2004</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Microcomputer Systems</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2005.htm"
+                                    target="_blank"><span class="formValue">EE2005</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Electronic Devices and Circuits</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2104.htm"
+                                    target="_blank"><span class="formValue">EE2104</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Introduction to Electromagnetics</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2108.htm"
+                                    target="_blank"><span class="formValue">EE2108</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Computational Engineering Analysis</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3008.htm"
+                                    target="_blank"><span class="formValue">EE3008</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Principles of Communications</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3070.htm"
+                                    target="_blank"><span class="formValue">EE3070</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Design Project</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;">Students successfully completed EE4083
+                                  are not required to take this course.</td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3109.htm"
+                                    target="_blank"><span class="formValue"> EE3109</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Applied Electromagnetics</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3114.htm"
+                                    target="_blank"><span class="formValue">EE3114</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Systems and Control</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3115.htm"
+                                    target="_blank"><span class="formValue">EE3115</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Applied Optoelectronic Devices</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3121.htm"
+                                    target="_blank"><span class="formValue">EE3121</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Differential Equations for Electrical
+                                  Engineering</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3122.htm"
+                                    target="_blank"><span class="formValue">EE3122</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Analogue Circuit Fundamentals</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3123.htm"
+                                    target="_blank"><span class="formValue">EE3123</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Introduction to Electric Power Systems
+                                </td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3124.htm"
+                                    target="_blank"><span class="formValue">EE3124</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Introduction to Electric Machines and
+                                  Drives</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3210.htm"
+                                    target="_blank"><span class="formValue">EE3210</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Signals and Systems</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4080.htm"
+                                    target="_blank"><span class="formValue">EE4080</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Project</td>
+                                <td width="10%" style="vertical-align:middle;">6</td>
+                                <td width="40%" style="vertical-align:middle;">Students successfully completed EE4084
+                                  are not required to take this course.</td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4090.htm"
+                                    target="_blank"><span class="formValue">EE4090</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Engineering Training</td>
+                                <td width="10%" style="vertical-align:middle;">0</td>
+                                <td width="40%" style="vertical-align:middle;">Students successfully completed EE4084
+                                  are not required to take this course.</td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/GE1354.htm"
+                                    target="_blank"><span class="formValue">GE1354</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Introduction to Electronic Design</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/MA2001.htm"
+                                    target="_blank"><span class="formValue">MA2001</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Multi-variable Calculus and Linear
+                                  Algebra</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td><br>
+                          <p><strong>2. Electives (15 credit units)</strong></p>
+                          <p><strong>Students are required to take at least 5 electives from the elective list.</strong>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td>
+                          <table name="xcrses[]" width="95%" border="1" style="border-collapse:collapse">
+                            <tbody id="crsestbody" class="a">
+                              <tr>
+                                <th width="10%">Course Code</th>
+                                <th width="40%">Course Title</th>
+                                <th width="10%">Credit Units</th>
+                                <th width="40%">Remarks</th>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE2331.htm"
+                                    target="_blank"><span class="formValue">EE2331</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Data Structures and Algorithms</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3009.htm"
+                                    target="_blank"><span class="formValue">EE3009</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Data Communications and Networking</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3206.htm"
+                                    target="_blank"><span class="formValue">EE3206</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Java Programming and Applications</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE3220.htm"
+                                    target="_blank"><span class="formValue">EE3220</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">System-on-Chip Design</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4015.htm"
+                                    target="_blank"><span class="formValue">EE4015</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Digital Signal Processing</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4016.htm"
+                                    target="_blank"><span class="formValue">EE4016</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Engineering Applications of Artificial
+                                  Intelligence</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4017.htm"
+                                    target="_blank"><span class="formValue">EE4017</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Internet Finance</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4035.htm"
+                                    target="_blank"><span class="formValue">EE4035</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Optical Fibre Communications</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4036.htm"
+                                    target="_blank"><span class="formValue">EE4036</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Wireless Communications</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4045.htm"
+                                    target="_blank"><span class="formValue">EE4045</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Computer Controlled Systems</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4101.htm"
+                                    target="_blank"><span class="formValue">EE4101</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Sustainable Energy Systems</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4105.htm"
+                                    target="_blank"><span class="formValue">EE4105</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Principles of Lasers</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4107.htm"
+                                    target="_blank"><span class="formValue">EE4107</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">5G Circuit Design</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4108.htm"
+                                    target="_blank"><span class="formValue">EE4108</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Antennas for Wireless Communications and
+                                  Sensing Connectivity</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4115.htm"
+                                    target="_blank"><span class="formValue">EE4115</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Audio-Visual Engineering</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4142.htm"
+                                    target="_blank"><span class="formValue">EE4142</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Introduction to Integrated Photonics</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4146.htm"
+                                    target="_blank"><span class="formValue">EE4146</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Data Engineering and Learning Systems
+                                </td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4209.htm"
+                                    target="_blank"><span class="formValue">EE4209</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Digital Audio Technology</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4221.htm"
+                                    target="_blank"><span class="formValue">EE4221</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Cloud Computing Systems</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4316.htm"
+                                    target="_blank"><span class="formValue">EE4316</span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Mobile Data Networks</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td><br><br><strong>3. Optional Internship Courses</strong></td>
+                      </tr>
+                      <tr class="linkRow">
+                        <td>
+                          <table name="xcrses[]" width="95%" border="1" style="border-collapse:collapse">
+                            <tbody id="crsestbody" class="a">
+                              <tr>
+                                <th width="10%">Course Code</th>
+                                <th width="40%">Course Title</th>
+                                <th width="10%">Credit Units</th>
+                                <th width="40%">Remarks</th>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4082.htm"
+                                    target="_blank"><span class="formValue">EE4082 </span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Professional Internship Program</td>
+                                <td width="10%" style="vertical-align:middle;">3</td>
+                                <td width="40%" style="vertical-align:middle;">This internship course of 3CU can be used
+                                  to waive the Major requirement of EE2066 Engineers in Society.</td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4083.htm"
+                                    target="_blank"><span class="formValue"> EE4083 </span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Professional Internship Program</td>
+                                <td width="10%" style="vertical-align:middle;">6</td>
+                                <td width="40%" style="vertical-align:middle;">This internship course of 6CU can be used
+                                  to waive the Major requirements of EE2066 Engineers in Society and EE3070 Design
+                                  Project or its equivalent.</td>
+                              </tr>
+                              <tr>
+                                <td width="10%" style="vertical-align:middle;"><a href="../course/EE4084.htm"
+                                    target="_blank"><span class="formValue"> EE4084 </span></a></td>
+                                <td width="40%" style="vertical-align:middle;">Professional Internship Program</td>
+                                <td width="10%" style="vertical-align:middle;">9</td>
+                                <td width="40%" style="vertical-align:middle;">This internship course of 9CU can be used
+                                  to waive the Major requirements of EE2066 Engineers in Society, EE4080 Project or its
+                                  equivalent, and EE4090 Engineering Training or its equivalent.</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr id="gp_study_plan_header" class="display">
+              <td colspan="2"><br><a id="SSP"></a><strong>
+                  <div class="formText padTitle" style="color:#aa1454;">Suggested Study Plan</div>
+                </strong>
+                <hr style="height:0px; padding:0px; margin:0px;color:#aa1454;border-top-color:#aa1454">
+              </td>
+            </tr>
+            <tr id="gp_study_plan_content" class="display">
+              <td colspan="2">
+                <div id="div_study_plan" class="formValue padContent">
+                  <table border="0" style="padding-top: 0px">
+                    <tr class="linkRow">
+                      <td class="linkUrl"><a
+                          href="https://www.ee.cityu.edu.hk/home/doc/programme/2022-23_ELEL_Entering_Major_Flowchart.pdf"
+                          target="_blank">Structure and Flowchart</a></td>
+                    </tr>
+                    <tr class="linkRow">
+                      <td class="linkUrl"><a
+                          href="http://www.ee.cityu.edu.hk/home/doc/programme/CIR_for_202223_Entering_ECE_Major.pdf"
+                          target="_blank">Curriculum Information Record</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <!-- Content -->
+    </div>
+  </div>
+  <!-- /Main Page -->
+
+  <!-- Footer -->
+  <div id="cityu-footer" class="cityu-outer">
+    <div class="cityu-inner">
+
+      <!-- Column -->
+      <div id="cityu-footer-column">
+
+        <!-- Notes -->
+        <div id="cityu-footer-notes">
+
+          <!-- Links -->
+          <div id="cityu-footer-links">
+            <a href="http://www.cityu.edu.hk/cityu/geninfo/privacy.htm">Privacy Policy</a>
+            &middot;&nbsp;<a href="http://www.cityu.edu.hk/cityu/copyright/index.htm#copyright">Copyright</a>
+            &middot;&nbsp;<a href="http://www.cityu.edu.hk/cityu/disclaimer/index.htm#disclaimer">Disclaimer</a>
+            &middot;&nbsp;<a href="http://www.cityu.edu.hk/cityu/accessibility/">Accessibility</a>
+          </div>
+          <!-- /Links -->
+
+          <!-- Credits -->
+          <div id="cityu-footer-credits">
+            &copy; City University of Hong Kong. All Rights Reserved.
+          </div>
+          <!-- /Credits -->
+
+        </div>
+        <!-- /Notes -->
+
+        <!-- Icons -->
+        <div id="cityu-footer-icons">
+          <a href="http://www.cityu.edu.hk/"><img
+              src="https://template.cityu.edu.hk/template/img/logos/cityu_footer.png"
+              alt="City University of Hong Kong" /></a>
+        </div>
+        <!-- /Icons -->
+
+      </div>
+      <!-- /Column -->
+
+    </div>
+  </div>
+  <!-- /Footer -->
+</body>
+
+</html>

@@ -2,6 +2,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "gen": "cd src && node ./gen.js",
     "test": "pnpm cypress run",
     "build1": "github-markdown portfolio.md --verbose > docs/portfolio.html",
     "build": "pnpx gulp build && pnpx gulp prettifyHTML",
